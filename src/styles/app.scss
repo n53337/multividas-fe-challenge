@@ -59,6 +59,14 @@ body {
 
   &__dropzone {
     flex: 1;
+    position: relative;
+
+    & input {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      opacity: 0;
+    }
   }
 
   &__tweaks {
