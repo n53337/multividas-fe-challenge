@@ -60,6 +60,9 @@ body {
   &__dropzone {
     flex: 1;
     position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     & input {
       position: absolute;
@@ -67,6 +70,11 @@ body {
       cursor: pointer;
       opacity: 0;
     }
+  }
+
+  &__image {
+    width: fit-content;
+    height: fit-content;
   }
 
   &__tweaks {

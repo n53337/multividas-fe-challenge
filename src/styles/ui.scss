@@ -41,4 +41,19 @@
   border-radius: config.$raduis-xl;
   cursor: pointer;
   color: colors.$primary;
+
+  & p {
+    display: none;
+  }
+
+  &-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & p {
+      display: block;
+    }
+  }
 }
