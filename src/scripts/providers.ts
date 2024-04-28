@@ -3,7 +3,7 @@ export const wrapperBody =
   document.querySelector<HTMLDivElement>(".wrapper__body");
 
 // Dropzone Element
-export const dropzone =
+export let dropzone =
   document.querySelector<HTMLDivElement>(".wrapper__dropzone");
 
 // Image Input Element
@@ -13,15 +13,19 @@ export const imageInput = document.querySelector<HTMLInputElement>("#image");
 export const grayscaleInput =
   document.querySelector<HTMLInputElement>("#grayscale");
 export const sepiaInput = document.querySelector<HTMLInputElement>("#sepia");
-const blurInput = document.querySelector<HTMLInputElement>("#blur");
+export const blurInput = document.querySelector<HTMLInputElement>("#blur");
 export const brightnessInput =
   document.querySelector<HTMLInputElement>("#brightness");
 export const contrastInput =
   document.querySelector<HTMLInputElement>("#contrast");
 
 // Modifier Values
-export let grayscaleValue = grayscaleInput?.value;
-export let sepiaValue = sepiaInput?.value;
-export let blurValue = blurInput?.value;
-export let brightnessValue = brightnessInput?.value;
-export let contrastValue = contrastInput?.value;
+export let grayscaleValue =
+  document.querySelector<HTMLSpanElement>(".grayscale__value");
+export let sepiaValue =
+  document.querySelector<HTMLSpanElement>(".sepia__value");
+export let blurValue = document.querySelector<HTMLSpanElement>(".blur__value");
+export let brightnessValue =
+  document.querySelector<HTMLSpanElement>(".brightness__value");
+export let contrastValue =
+  document.querySelector<HTMLSpanElement>(".contrast__value");
