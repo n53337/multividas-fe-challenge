@@ -19,6 +19,12 @@ export const brightnessInput =
 export const contrastInput =
   document.querySelector<HTMLInputElement>("#contrast");
 
+// CTA Buttons
+export const downloadBtn =
+  document.querySelector<HTMLButtonElement>(".download__btn");
+export const resetBtn =
+  document.querySelector<HTMLButtonElement>(".reset__btn");
+
 // Modifier Values
 export let grayscaleValue =
   document.querySelector<HTMLSpanElement>(".grayscale__value");

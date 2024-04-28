@@ -35,7 +35,14 @@
           <div class="wrapper__tweaks">
             <div class="wrapper__tweaks__item">
               <label for="grayscale">grayscale</label>
-              <input type="range" min="0" max="100" id="grayscale" value="0" />
+              <input
+                type="range"
+                min="0"
+                max="100"
+                id="grayscale"
+                value="0"
+                disabled
+              />
               <span class="wrapper__tweaks__item__value grayscale__value"
                 >0</span
               >
@@ -43,13 +50,27 @@
 
             <div class="wrapper__tweaks__item">
               <label for="grayscale">sepia</label>
-              <input type="range" min="0" max="100" id="sepia" value="0" />
+              <input
+                type="range"
+                min="0"
+                max="100"
+                id="sepia"
+                value="0"
+                disabled
+              />
               <span class="wrapper__tweaks__item__value sepia__value">0</span>
             </div>
 
             <div class="wrapper__tweaks__item">
               <label for="blur">blur</label>
-              <input type="range" min="0" max="100" id="blur" value="0" />
+              <input
+                type="range"
+                min="0"
+                max="100"
+                id="blur"
+                value="0"
+                disabled
+              />
               <span class="wrapper__tweaks__item__value blur__value">0</span>
             </div>
 
@@ -61,6 +82,7 @@
                 max="100"
                 id="brightness"
                 value="100"
+                disabled
               />
               <span class="wrapper__tweaks__item__value brightness__value"
                 >100</span
@@ -69,15 +91,22 @@
 
             <div class="wrapper__tweaks__item">
               <label for="contrast">contrast</label>
-              <input type="range" min="0" max="100" id="contrast" value="100" />
+              <input
+                type="range"
+                min="0"
+                max="100"
+                id="contrast"
+                value="100"
+                disabled
+              />
               <span class="wrapper__tweaks__item__value contrast__value"
                 >100</span
               >
             </div>
 
             <div class="wrapper__tweaks__action">
-              <button class="btn btn-primary">Download</button>
-              <button class="btn btn-secondary">Reset</button>
+              <button class="btn btn-primary download__btn">Download</button>
+              <button class="btn btn-secondary reset__btn">Reset</button>
             </div>
           </div>
         </div>

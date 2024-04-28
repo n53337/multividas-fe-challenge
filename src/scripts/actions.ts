@@ -12,6 +12,13 @@ import {
   sepiaValue,
 } from "./providers";
 
+const enableFilters = () => {
+  grayscaleInput!.disabled = false;
+  sepiaInput!.disabled = false;
+  blurInput!.disabled = false;
+  brightnessInput!.disabled = false;
+  contrastInput!.disabled = false;
+};
 export const handleImageUpload = (image: File) => {
   const reader = new FileReader();
 
@@ -21,10 +28,8 @@ export const handleImageUpload = (image: File) => {
   };
 
   reader.readAsDataURL(image);
-};
 
-const setFilters = () => {
-  dropzone!.style.filter = `grayscale(${grayscaleInput?.value}%) sepia(${sepiaInput?.value}%) blur(${blurInput?.value}px) brightness(${brightnessInput?.value}%) contrast(${contrastInput?.value}%)`;
+  enableFilters();
 };
 
 export const handleGrayscaleChange = () => {
@@ -50,4 +55,23 @@ export const handleBrightnessChange = () => {
 export const handleContrastChange = () => {
   setFilters();
   contrastValue!.textContent = contrastInput?.value ?? "0";
+};
+
+const setFilters = () => {
+  dropzone!.style.filter = `grayscale(${grayscaleInput?.value}%) sepia(${sepiaInput?.value}%) blur(${blurInput?.value}px) brightness(${brightnessInput?.value}%) contrast(${contrastInput?.value}%)`;
+};
+
+export const resetFilters = () => {
+  grayscaleInput!.value = "0";
+  sepiaInput!.value = "0";
+  blurInput!.value = "0";
+  brightnessInput!.value = "100";
+  contrastInput!.value = "100";
+
+  grayscaleValue!.textContent = "0";
+  sepiaValue!.textContent = "0";
+  blurValue!.textContent = "0";
+  brightnessValue!.textContent = "100";
+  contrastValue!.textContent = "100";
+  setFilters();
 };

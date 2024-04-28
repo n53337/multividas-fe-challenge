@@ -5,6 +5,7 @@ import {
   handleGrayscaleChange,
   handleImageUpload,
   handleSepiaChange,
+  resetFilters,
 } from "./actions";
 import {
   blurInput,
@@ -12,6 +13,7 @@ import {
   contrastInput,
   grayscaleInput,
   imageInput,
+  resetBtn,
   sepiaInput,
 } from "./providers";
 
@@ -24,23 +26,29 @@ export const initApp = () => {
 
   // Filter Setters
 
-  grayscaleInput?.addEventListener("input", () => {
+  grayscaleInput!.addEventListener("input", () => {
     handleGrayscaleChange();
   });
 
-  sepiaInput?.addEventListener("input", () => {
+  sepiaInput!.addEventListener("input", () => {
     handleSepiaChange();
   });
 
-  blurInput?.addEventListener("input", () => {
+  blurInput!.addEventListener("input", () => {
     handleBlurChange();
   });
 
-  brightnessInput?.addEventListener("input", () => {
+  brightnessInput!.addEventListener("input", () => {
     handleBrightnessChange();
   });
 
-  contrastInput?.addEventListener("input", () => {
+  contrastInput!.addEventListener("input", () => {
     handleContrastChange();
+  });
+
+  // Actions
+
+  resetBtn!.addEventListener("click", () => {
+    resetFilters();
   });
 };
