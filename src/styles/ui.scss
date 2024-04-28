@@ -1,6 +1,7 @@
 @use "colors";
+@use "config";
 
-// This SCSS file is only for UI Components
+// This file is only for UI Components
 
 .btn {
   border-radius: 8px;
@@ -26,4 +27,18 @@
   background-color: colors.$background;
   color: colors.$primary;
   border-color: colors.$primary;
+}
+
+.dropzone {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: colors.$dropzone;
+  border: 1px dashed colors.$border;
+  border-radius: config.$raduis-xl;
+  cursor: pointer;
+  color: colors.$primary;
 }

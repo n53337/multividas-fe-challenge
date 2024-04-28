@@ -18,7 +18,58 @@
     <title>Multividas Coding Challenge</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main id="app" class="app">
+      <section class="wrapper">
+        <header class="wrapper__header">
+          <h2>Multividas Coding Challenge</h2>
+        </header>
+
+        <span class="wrapper__divider"></span>
+
+        <div class="wrapper__body">
+          <div class="wrapper__dropzone dropzone dropzone-empty">
+            Import an image...
+          </div>
+
+          <div class="wrapper__tweaks">
+            <div class="wrapper__tweaks__item">
+              <label for="grayscale">grayscale</label>
+              <input type="range" min="0" max="100" id="grayscale" />
+              <span class="wrapper__tweaks__item__value">100</span>
+            </div>
+
+            <div class="wrapper__tweaks__item">
+              <label for="grayscale">sepia</label>
+              <input type="range" min="0" max="100" id="sepia" />
+              <span class="wrapper__tweaks__item__value">10</span>
+            </div>
+
+            <div class="wrapper__tweaks__item">
+              <label for="blur">blur</label>
+              <input type="range" min="0" max="100" id="blur" />
+              <span class="wrapper__tweaks__item__value">10</span>
+            </div>
+
+            <div class="wrapper__tweaks__item">
+              <label for="brightness">brightness</label>
+              <input type="range" min="0" max="100" id="brightness" />
+              <span class="wrapper__tweaks__item__value">10</span>
+            </div>
+
+            <div class="wrapper__tweaks__item">
+              <label for="contrast">contrast</label>
+              <input type="range" min="0" max="100" id="contrast" />
+              <span class="wrapper__tweaks__item__value">10</span>
+            </div>
+
+            <div class="wrapper__tweaks__action">
+              <button class="btn btn-primary">Download</button>
+              <button class="btn btn-secondary">Reset</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <script type="module" src="/src/scripts/main.ts"></script>
   </body>
 </html>
