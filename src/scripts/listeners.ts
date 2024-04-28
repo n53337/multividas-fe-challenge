@@ -1,5 +1,19 @@
-import { handleGrayscaleChange, handleImageUpload } from "./actions";
-import { grayscaleInput, imageInput } from "./providers";
+import {
+  handleBlurChange,
+  handleBrightnessChange,
+  handleContrastChange,
+  handleGrayscaleChange,
+  handleImageUpload,
+  handleSepiaChange,
+} from "./actions";
+import {
+  blurInput,
+  brightnessInput,
+  contrastInput,
+  grayscaleInput,
+  imageInput,
+  sepiaInput,
+} from "./providers";
 
 export const initApp = () => {
   // Image Setter
@@ -9,7 +23,24 @@ export const initApp = () => {
   });
 
   // Filter Setters
+
   grayscaleInput?.addEventListener("input", () => {
     handleGrayscaleChange();
+  });
+
+  sepiaInput?.addEventListener("input", () => {
+    handleSepiaChange();
+  });
+
+  blurInput?.addEventListener("input", () => {
+    handleBlurChange();
+  });
+
+  brightnessInput?.addEventListener("input", () => {
+    handleBrightnessChange();
+  });
+
+  contrastInput?.addEventListener("input", () => {
+    handleContrastChange();
   });
 };
