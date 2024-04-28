@@ -75,7 +75,7 @@ body {
     align-items: center;
 
     & label {
-      width: 4rem;
+      width: 4.5rem;
       color: colors.$primary;
       font-weight: 500;
     }
@@ -114,5 +114,13 @@ body {
 @media screen and (min-width: 1024px) {
   body {
     align-items: center;
+  }
+
+  .wrapper {
+    &__body {
+      padding: 4em;
+      flex-direction: row;
+      gap: 4em;
+    }
   }
 }
