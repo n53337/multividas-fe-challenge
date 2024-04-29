@@ -9,6 +9,8 @@ export let dropzone =
 // Image Input Element
 export const imageInput = document.querySelector<HTMLInputElement>("#image");
 
+export let imageUrl: string | null = null;
+
 // Modifier Inputs
 export const grayscaleInput =
   document.querySelector<HTMLInputElement>("#grayscale");

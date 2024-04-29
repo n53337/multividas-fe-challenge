@@ -12,6 +12,7 @@ import {
   sepiaValue,
 } from "./providers";
 
+let imageUrl: string | null = null;
 const enableFilters = () => {
   grayscaleInput!.disabled = false;
   sepiaInput!.disabled = false;
@@ -24,6 +25,7 @@ export const handleImageUpload = (image: File) => {
 
   reader.onload = function (e) {
     dropzone!.style.backgroundImage = `url('${e.target?.result?.toString()!}')`;
+    imageUrl = e.target?.result?.toString()!;
     dropzone!.classList.remove("dropzone-empty");
   };
 
@@ -57,8 +59,12 @@ export const handleContrastChange = () => {
   contrastValue!.textContent = contrastInput?.value ?? "0";
 };
 
+const getFilters = () => {
+  const filters = `grayscale(${grayscaleInput?.value}%) sepia(${sepiaInput?.value}%) blur(${blurInput?.value}px) brightness(${brightnessInput?.value}%) contrast(${contrastInput?.value}%)`;
+  return filters;
+};
 const setFilters = () => {
-  dropzone!.style.filter = `grayscale(${grayscaleInput?.value}%) sepia(${sepiaInput?.value}%) blur(${blurInput?.value}px) brightness(${brightnessInput?.value}%) contrast(${contrastInput?.value}%)`;
+  dropzone!.style.filter = getFilters();
 };
 
 export const resetFilters = () => {
@@ -75,3 +81,30 @@ export const resetFilters = () => {
   contrastValue!.textContent = "100";
   setFilters();
 };
+
+export const downloadImage = () => {
+  const link = document.createElement("a");
+  link.href = saveImage()!;
+  link.download = `edited_image_${Date.now()}.png`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+function saveImage() {
+  const canvas = document.createElement("canvas");
+  const image = document.createElement("img");
+  image.src = imageUrl!;
+  const context = canvas.getContext("2d");
+
+  const canvasWidth = image.width;
+  const canvasHeight = image.height;
+
+  canvas.width = canvasWidth;
+  canvas.height = canvasHeight;
+
+  context!.filter = getFilters();
+  context!.drawImage(image, 0, 0, canvasWidth, canvasHeight);
+
+  return canvas.toDataURL();
+}

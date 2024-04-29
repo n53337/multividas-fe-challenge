@@ -1,4 +1,5 @@
 import {
+  downloadImage,
   handleBlurChange,
   handleBrightnessChange,
   handleContrastChange,
@@ -11,6 +12,7 @@ import {
   blurInput,
   brightnessInput,
   contrastInput,
+  downloadBtn,
   grayscaleInput,
   imageInput,
   resetBtn,
@@ -50,5 +52,9 @@ export const initApp = () => {
 
   resetBtn!.addEventListener("click", () => {
     resetFilters();
+  });
+
+  downloadBtn!.addEventListener("click", () => {
+    downloadImage();
   });
 };
